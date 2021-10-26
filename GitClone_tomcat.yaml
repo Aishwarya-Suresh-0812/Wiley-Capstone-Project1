@@ -11,7 +11,7 @@
       
   - name: Cloaning playbook from repo
     ansible.builtin.git:
-      repo: https://github.com/PRATYUSHNAIR1976/pechuwar.git
+      repo: https://github.com/Aishwarya-Suresh-0812/Aishwarya-Suresh-0812-Wiley-Capstone-Project1.git
       dest: /root/gitrepo
       
   - name: installing tomcat CentOS
