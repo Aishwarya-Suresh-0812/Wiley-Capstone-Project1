@@ -18,7 +18,7 @@
       
   - name: Cloaning playbook from repo
     ansible.builtin.git:
-      repo: https://github.com/Aishwarya-Suresh-0812/Aishwarya-Suresh-0812-Wiley-Capstone-Project1.git
+      repo: https://github.com/Aishwarya-Suresh-0812/Wiley-Capstone-Project1.git
       dest: /root/gitrepo
       
   - name: installing tomcat CentOS
@@ -51,7 +51,7 @@
       state: restarted
     when:  ansible_facts['os_family'] == "RedHat"
   
-  - name: starting tomcat Ubuntu
+  - name: starting up tomcat Ubuntu
     service:
       name: tomcat9
       state: restarted
@@ -59,13 +59,13 @@
   
   - name: copying addressbook file CentOS
     copy:
-      remote_src: /root/workspace/Capstone_Project_1B/target/addressbook.war
+      remote_src: /root/gitrepo/addressbook.war
       dest: /usr/share/tomcat/webapps
     when:  ansible_facts['os_family'] == "RedHat"
   
   - name: copying addressbook file Ubuntu
     copy:
-      remote_src: /root/workspace/Capstone_Project_1B/target/addressbook.war
+      remote_src: /root/gitrepo/addressbook.war
       dest: /var/lib/tomcat9/webapps
     when:  ansible_facts['os_family'] == "Debian"
   
