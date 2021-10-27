@@ -59,13 +59,13 @@
   
   - name: copying addressbook file CentOS
     copy:
-      remote_src: /root/gitrepo/addressbook.war
+      remote_src: /root/gitrepo/addressbook-2.0.war
       dest: /usr/share/tomcat/webapps
     when:  ansible_facts['os_family'] == "RedHat"
   
   - name: copying addressbook file Ubuntu
     copy:
-      remote_src: /root/gitrepo/addressbook.war
+      remote_src: /root/gitrepo/addressbook-2.0.war
       dest: /var/lib/tomcat9/webapps
     when:  ansible_facts['os_family'] == "Debian"
   
